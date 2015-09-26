@@ -28,14 +28,56 @@
     self.view = _mainView;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self discover];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Bose specific code
+
+- (void)discover
+{
+    _browser = [[NSNetServiceBrowser alloc] init];
+    
+    [_browser setDelegate:self];
+    
+    [_browser searchForServicesOfType:@"_soundtouch._tcp" inDomain:@""];
+}
+
+#pragma mark - NSNetServiceBrowserDelegate
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
+{
+    NSLog(@"found service %@ with name %@", service, [service name]);
+    
+    [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device found:\n%@", [service name]]];
+}
+
+- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
+{
+    NSLog(@"did stop searching");
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)browser didNotSearch:(NSDictionary *)errorDict
+{
+    NSLog(@"did not search");
+}
+
+- (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser
+{
+    NSLog(@"will search");
+    
+    [_mainView setLabel:@"Searching for SoundTouch devices..."];
 }
 
 @end

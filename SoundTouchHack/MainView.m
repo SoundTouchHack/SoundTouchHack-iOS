@@ -15,6 +15,8 @@
         
         _infoLabel = [[UILabel alloc] init];
         
+        _infoLabel.numberOfLines = 20;
+        _infoLabel.font = [UIFont systemFontOfSize:12];
         _infoLabel.text = @"App loaded";
         
         [self addSubview:_infoLabel];
