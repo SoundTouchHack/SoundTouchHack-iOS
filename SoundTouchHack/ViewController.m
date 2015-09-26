@@ -10,6 +10,8 @@
 
 #import "ViewController.h"
 
+#import "XmlParser.h"
+
 @interface ViewController ()
 {
     MainView *_mainView;
@@ -56,7 +58,44 @@
     [_browser searchForServicesOfType:@"_soundtouch._tcp" inDomain:@""];
 }
 
-- (void)changeVolume:(int)volume
+- (void)getVolume
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://%s:%i/volume", _ipAddress, _portNumber];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if ([data length] > 0 && error == nil)
+             [self fetchedVolume:data];
+         
+         /*
+          else if ([data length] == 0 && error == nil)
+          NSLog(@"parser: data length = 0");
+          else if (error != nil && error.code == ERROR_CODE_TIMEOUT)
+          [delegate timedOut];
+          else if (error != nil)
+          NSLog(@"parser error: %@", error);
+          */
+     }];
+}
+
+- (void)fetchedVolume:(NSData *)data
+{
+    XmlParser *parser = [[XmlParser alloc] init];
+    
+    int volume = [parser parseXml:data];
+    
+    [_mainView setVolume:volume];
+    
+    NSLog(@"volume fetched: %d", volume);
+}
+
+- (void)setVolume:(int)volume
 {
     NSString *post = [NSString stringWithFormat:@"<volume>%d</volume>", volume];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -146,6 +185,8 @@
         NSLog(@"Port number: %i", _portNumber);
         
         [self updateInfo];
+        
+        [self getVolume];
     }
 }
 
@@ -153,7 +194,7 @@
 
 - (void)volume:(int)volume
 {
-    [self changeVolume:volume];
+    [self setVolume:volume];
 }
 
 @end

@@ -26,6 +26,7 @@
         
         _slider.minimumValue = 0;
         _slider.maximumValue = 100;
+        _slider.continuous = NO;
         
         [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
         
@@ -72,6 +73,13 @@
     _infoLabel.text = string;
     
     [self setNeedsLayout];
+}
+
+- (void)setVolume:(int)volume
+{
+    NSLog(@"Set slider value: %d", volume);
+    
+    [_slider setValue:volume animated:NO];
 }
 
 @end

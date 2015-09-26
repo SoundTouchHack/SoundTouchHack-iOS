@@ -18,5 +18,6 @@
 @property (nonatomic, strong) id<MainViewDelegate> delegate;
 
 - (void)setLabel:(NSString *)string;
+- (void)setVolume:(int)volume;
 
 @end
