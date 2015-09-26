@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4967F6251BB6911700DBEA06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F6241BB6911700DBEA06 /* main.m */; };
+		4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F6271BB6911700DBEA06 /* AppDelegate.m */; };
+		4967F62B1BB6911700DBEA06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F62A1BB6911700DBEA06 /* ViewController.m */; };
+		4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62C1BB6911700DBEA06 /* Main.storyboard */; };
+		4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62F1BB6911700DBEA06 /* Assets.xcassets */; };
+		4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4967F6201BB6911700DBEA06 /* SoundTouchHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTouchHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4967F6241BB6911700DBEA06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4967F6261BB6911700DBEA06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4967F6271BB6911700DBEA06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4967F6291BB6911700DBEA06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4967F62A1BB6911700DBEA06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4967F62D1BB6911700DBEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4967F62F1BB6911700DBEA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4967F6321BB6911700DBEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4967F6341BB6911700DBEA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4967F61D1BB6911700DBEA06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4967F6171BB6911600DBEA06 = {
+			isa = PBXGroup;
+			children = (
+				4967F6221BB6911700DBEA06 /* SoundTouchHack */,
+				4967F6211BB6911700DBEA06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4967F6211BB6911700DBEA06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4967F6201BB6911700DBEA06 /* SoundTouchHack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4967F6221BB6911700DBEA06 /* SoundTouchHack */ = {
+			isa = PBXGroup;
+			children = (
+				4967F6261BB6911700DBEA06 /* AppDelegate.h */,
+				4967F6271BB6911700DBEA06 /* AppDelegate.m */,
+				4967F6291BB6911700DBEA06 /* ViewController.h */,
+				4967F62A1BB6911700DBEA06 /* ViewController.m */,
+				4967F62C1BB6911700DBEA06 /* Main.storyboard */,
+				4967F62F1BB6911700DBEA06 /* Assets.xcassets */,
+				4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */,
+				4967F6341BB6911700DBEA06 /* Info.plist */,
+				4967F6231BB6911700DBEA06 /* Supporting Files */,
+			);
+			path = SoundTouchHack;
+			sourceTree = "<group>";
+		};
+		4967F6231BB6911700DBEA06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4967F6241BB6911700DBEA06 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4967F61F1BB6911700DBEA06 /* SoundTouchHack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4967F6371BB6911700DBEA06 /* Build configuration list for PBXNativeTarget "SoundTouchHack" */;
+			buildPhases = (
+				4967F61C1BB6911700DBEA06 /* Sources */,
+				4967F61D1BB6911700DBEA06 /* Frameworks */,
+				4967F61E1BB6911700DBEA06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundTouchHack;
+			productName = SoundTouchHack;
+			productReference = 4967F6201BB6911700DBEA06 /* SoundTouchHack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4967F6181BB6911600DBEA06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Ice Design";
+				TargetAttributes = {
+					4967F61F1BB6911700DBEA06 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 4967F61B1BB6911600DBEA06 /* Build configuration list for PBXProject "SoundTouchHack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4967F6171BB6911600DBEA06;
+			productRefGroup = 4967F6211BB6911700DBEA06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4967F61F1BB6911700DBEA06 /* SoundTouchHack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4967F61E1BB6911700DBEA06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */,
+				4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */,
+				4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4967F61C1BB6911700DBEA06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4967F62B1BB6911700DBEA06 /* ViewController.m in Sources */,
+				4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */,
+				4967F6251BB6911700DBEA06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4967F62C1BB6911700DBEA06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4967F62D1BB6911700DBEA06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4967F6321BB6911700DBEA06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4967F6351BB6911700DBEA06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4967F6361BB6911700DBEA06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4967F6381BB6911700DBEA06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundTouchHack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.icedesign.SoundTouchHack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4967F6391BB6911700DBEA06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoundTouchHack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.icedesign.SoundTouchHack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4967F61B1BB6911600DBEA06 /* Build configuration list for PBXProject "SoundTouchHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4967F6351BB6911700DBEA06 /* Debug */,
+				4967F6361BB6911700DBEA06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4967F6371BB6911700DBEA06 /* Build configuration list for PBXNativeTarget "SoundTouchHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4967F6381BB6911700DBEA06 /* Debug */,
+				4967F6391BB6911700DBEA06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4967F6181BB6911600DBEA06 /* Project object */;
+}
