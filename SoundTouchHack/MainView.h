@@ -5,4 +5,6 @@
     UILabel *_infoLabel;
 }
 
+- (void)setLabel:(NSString *)string;
+
 @end

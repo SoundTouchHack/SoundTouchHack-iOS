@@ -1,6 +1,6 @@
 #import "MainView.h"
 
-#define MARGIN 15
+#define MARGIN 50
 
 @implementation MainView
 
@@ -10,12 +10,18 @@
     
     if (self)
     {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor whiteColor];
+        
+        
+        _infoLabel = [[UILabel alloc] init];
+        
+        _infoLabel.text = @"App loaded";
+        
+        [self addSubview:_infoLabel];
     }
     
     return self;
 }
-
 
 #pragma mark - Private methods
 
@@ -23,13 +29,22 @@
 {
     [super layoutSubviews];
     
-    /*CGSize size = self.bounds.size;
+    CGSize size = self.bounds.size;
     
     int maxLabelWidth = size.width-2*MARGIN;
     
     CGRect infoRect = [_infoLabel.text boundingRectWithSize:CGSizeMake(maxLabelWidth, 9999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_infoLabel.font} context:nil];
     
-    _infoLabel.frame = CGRectMake(MARGIN, MARGIN, infoRect.size.width, infoRect.size.height);*/
+    _infoLabel.frame = CGRectMake(MARGIN, MARGIN, infoRect.size.width, infoRect.size.height);
+}
+
+#pragma mark - Public methods
+
+- (void)setLabel:(NSString *)string
+{
+    _infoLabel.text = string;
+    
+    [self setNeedsLayout];
 }
 
 @end
