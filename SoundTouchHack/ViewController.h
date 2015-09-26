@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<NSNetServiceBrowserDelegate>
+@interface ViewController : UIViewController<NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSStreamDelegate>
 {
     NSNetServiceBrowser *_browser;
+    
+    NSNetService *_service;
+    
+    NSInputStream *_inputStream;
+    NSOutputStream *_outputStream;
+    
+    NSString *_macAddress;
+    char *_ipAddress;
+    NSInteger _portNumber;
 }
 
 @end
