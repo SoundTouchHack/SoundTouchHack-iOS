@@ -20,6 +20,16 @@
         _infoLabel.text = @"App loaded";
         
         [self addSubview:_infoLabel];
+        
+        
+        _slider = [[UISlider alloc] init];
+        
+        _slider.minimumValue = 0;
+        _slider.maximumValue = 100;
+        
+        [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        
+        [self addSubview:_slider];
     }
     
     return self;
@@ -33,11 +43,26 @@
     
     CGSize size = self.bounds.size;
     
+    int y = MARGIN;
+    
     int maxLabelWidth = size.width-2*MARGIN;
     
     CGRect infoRect = [_infoLabel.text boundingRectWithSize:CGSizeMake(maxLabelWidth, 9999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_infoLabel.font} context:nil];
     
-    _infoLabel.frame = CGRectMake(MARGIN, MARGIN, infoRect.size.width, infoRect.size.height);
+    _infoLabel.frame = CGRectMake(MARGIN, y, infoRect.size.width, infoRect.size.height);
+    
+    
+    y+= infoRect.size.height+MARGIN;
+    
+    
+    _slider.frame = CGRectMake(MARGIN, y, size.width-2*MARGIN, 15);
+}
+
+- (void)sliderValueChanged:(UISlider *)sender
+{
+    //NSLog(@"Slider value: %f", sender.value);
+    
+    [_delegate volume:sender.value];
 }
 
 #pragma mark - Public methods

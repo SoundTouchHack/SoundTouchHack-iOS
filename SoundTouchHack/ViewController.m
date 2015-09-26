@@ -10,8 +10,6 @@
 
 #import "ViewController.h"
 
-#import "MainView.h"
-
 @interface ViewController ()
 {
     MainView *_mainView;
@@ -26,6 +24,8 @@
     CGRect frame = [UIScreen mainScreen].bounds;
     
     _mainView = [[MainView alloc] initWithFrame:frame];
+    
+    _mainView.delegate = self;
     
     self.view = _mainView;
 }
@@ -147,9 +147,13 @@
         
         [self updateInfo];
     }
-    
-    [self changeVolume:25];
-    
+}
+
+#pragma mark - MainViewDelegate
+
+- (void)volume:(int)volume
+{
+    [self changeVolume:volume];
 }
 
 @end
