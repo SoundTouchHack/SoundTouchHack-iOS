@@ -13,6 +13,8 @@
 		4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62C1BB6911700DBEA06 /* Main.storyboard */; };
 		4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62F1BB6911700DBEA06 /* Assets.xcassets */; };
 		4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */; };
+		4967F63C1BB6913200DBEA06 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F63B1BB6913200DBEA06 /* MainView.m */; settings = {ASSET_TAGS = (); }; };
+		4967F63E1BB6936000DBEA06 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		4967F62F1BB6911700DBEA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4967F6321BB6911700DBEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4967F6341BB6911700DBEA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4967F63A1BB6913200DBEA06 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		4967F63B1BB6913200DBEA06 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 		4967F6171BB6911600DBEA06 = {
 			isa = PBXGroup;
 			children = (
+				4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */,
 				4967F6221BB6911700DBEA06 /* SoundTouchHack */,
 				4967F6211BB6911700DBEA06 /* Products */,
 			);
@@ -62,6 +68,8 @@
 				4967F6271BB6911700DBEA06 /* AppDelegate.m */,
 				4967F6291BB6911700DBEA06 /* ViewController.h */,
 				4967F62A1BB6911700DBEA06 /* ViewController.m */,
+				4967F63A1BB6913200DBEA06 /* MainView.h */,
+				4967F63B1BB6913200DBEA06 /* MainView.m */,
 				4967F62C1BB6911700DBEA06 /* Main.storyboard */,
 				4967F62F1BB6911700DBEA06 /* Assets.xcassets */,
 				4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */,
@@ -137,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */,
+				4967F63E1BB6936000DBEA06 /* Default-568h@2x.png in Resources */,
 				4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */,
 				4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */,
 			);
@@ -150,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967F62B1BB6911700DBEA06 /* ViewController.m in Sources */,
+				4967F63C1BB6913200DBEA06 /* MainView.m in Sources */,
 				4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */,
 				4967F6251BB6911700DBEA06 /* main.m in Sources */,
 			);

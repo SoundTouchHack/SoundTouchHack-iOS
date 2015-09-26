@@ -8,11 +8,25 @@
 
 #import "ViewController.h"
 
+#import "MainView.h"
+
 @interface ViewController ()
+{
+    MainView *_mainView;
+}
 
 @end
 
 @implementation ViewController
+
+- (void)loadView
+{
+    CGRect frame = [UIScreen mainScreen].bounds;
+    
+    _mainView = [[MainView alloc] initWithFrame:frame];
+    
+    self.view = _mainView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
