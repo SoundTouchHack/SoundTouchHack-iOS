@@ -20,9 +20,10 @@
 {
     window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
+    _deviceListController = [[DeviceListController alloc] init];
     _viewController = [[ViewController alloc] init];
     
-    window.rootViewController = _viewController;
+    window.rootViewController = _deviceListController;
     
     [self.window makeKeyAndVisible];
     

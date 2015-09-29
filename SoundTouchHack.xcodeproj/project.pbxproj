@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49077C111BBAA7A20057CFE7 /* DeviceListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49077C101BBAA7A20057CFE7 /* DeviceListController.m */; settings = {ASSET_TAGS = (); }; };
+		49077C141BBAA8AB0057CFE7 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 49077C131BBAA8AB0057CFE7 /* Device.m */; settings = {ASSET_TAGS = (); }; };
 		491B718B1BB6D17800227A09 /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 491B718A1BB6D17800227A09 /* XmlParser.m */; settings = {ASSET_TAGS = (); }; };
 		4967F6251BB6911700DBEA06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F6241BB6911700DBEA06 /* main.m */; };
 		4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F6271BB6911700DBEA06 /* AppDelegate.m */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49077C0F1BBAA7A20057CFE7 /* DeviceListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceListController.h; path = SoundTouchHack/DeviceListController.h; sourceTree = "<group>"; };
+		49077C101BBAA7A20057CFE7 /* DeviceListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceListController.m; path = SoundTouchHack/DeviceListController.m; sourceTree = "<group>"; };
+		49077C121BBAA8AB0057CFE7 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = SoundTouchHack/Device.h; sourceTree = "<group>"; };
+		49077C131BBAA8AB0057CFE7 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = SoundTouchHack/Device.m; sourceTree = "<group>"; };
 		491B71891BB6D17800227A09 /* XmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParser.h; sourceTree = "<group>"; };
 		491B718A1BB6D17800227A09 /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParser.m; sourceTree = "<group>"; };
 		4967F6201BB6911700DBEA06 /* SoundTouchHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundTouchHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +59,10 @@
 				4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */,
 				4967F6221BB6911700DBEA06 /* SoundTouchHack */,
 				4967F6211BB6911700DBEA06 /* Products */,
+				49077C0F1BBAA7A20057CFE7 /* DeviceListController.h */,
+				49077C101BBAA7A20057CFE7 /* DeviceListController.m */,
+				49077C121BBAA8AB0057CFE7 /* Device.h */,
+				49077C131BBAA8AB0057CFE7 /* Device.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +178,8 @@
 				491B718B1BB6D17800227A09 /* XmlParser.m in Sources */,
 				4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */,
 				4967F6251BB6911700DBEA06 /* main.m in Sources */,
+				49077C141BBAA8AB0057CFE7 /* Device.m in Sources */,
+				49077C111BBAA7A20057CFE7 /* DeviceListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
