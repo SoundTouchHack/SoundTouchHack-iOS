@@ -21,7 +21,7 @@
     char *_ipAddress;
     NSInteger _portNumber;
     
-    NSMutableArray *_devices;
+    NSMutableArray *_services;
 }
 
 @end

@@ -29,7 +29,7 @@
     {
         self.title = @"Devices";
         
-        _devices = [[NSMutableArray alloc] init];
+        _services = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -56,19 +56,16 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
 {
     NSLog(@"Found service: %@", [service name]);
-
-    
-    [_devices addObject:[[Device alloc] initWithName:service.name ip:@"IP" port:@"PORT"]];
-    
-    [self.tableView reloadData];
     
     
-    _service = [[NSNetService alloc] initWithDomain:@"local." type:@"_soundtouch._tcp" name:[service name]];
+    NSNetService *service2 = [[NSNetService alloc] initWithDomain:@"local." type:@"_soundtouch._tcp" name:[service name]];
     
-    _service.delegate = self;
+    service2.delegate = self;
     
-    [_service resolveWithTimeout:2];
-    [_service startMonitoring];
+    [service2 resolveWithTimeout:2];
+    [service2 startMonitoring];
+    
+    [_services addObject:service2];
 }
 
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
@@ -108,7 +105,7 @@
         NSLog(@"IP address: %s", _ipAddress);
         NSLog(@"Port number: %i", _portNumber);
         
-        
+        [self.tableView reloadData];
     }
 }
 
@@ -121,22 +118,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_devices count];
+    return [_services count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     
-    Device *device = [_devices objectAtIndex:indexPath.row];
+    //Device *device = [_devices objectAtIndex:indexPath.row];
+    NSNetService *service = [_services objectAtIndex:indexPath.row];
     
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"identifier"];
     }
     
-    cell.textLabel.text = device.name;
-    cell.detailTextLabel.text = device.ip;
+    cell.textLabel.text = service.name;
+    
+    for (NSData *address in [service addresses])
+    {
+        struct sockaddr_in *socketAddress = (struct sockaddr_in *) [address bytes];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%s", inet_ntoa(socketAddress->sin_addr)];
+    }
     
     return cell;
 }
