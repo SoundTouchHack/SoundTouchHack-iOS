@@ -11,6 +11,7 @@
 #import "DeviceListController.h"
 
 #import "Device.h"
+#import "ViewController.h"
 #import "XmlParser.h"
 
 @interface DeviceListController ()
@@ -30,14 +31,11 @@
         self.title = @"Devices";
         
         _services = [[NSMutableArray alloc] init];
+        
+        [self discover];
     }
     
     return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self discover];
 }
 
 #pragma mark - Bose specific code
@@ -143,6 +141,15 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNetService *service = [_services objectAtIndex:indexPath.row];
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    
+    [self.navigationController pushViewController:viewController animated:true];
 }
 
 @end
