@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "DeviceListController.h"
+#import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,10 +23,15 @@
 {
     window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
-    _deviceListController = [[DeviceListController alloc] init];
-    _viewController = [[ViewController alloc] init];
+    DeviceListController *deviceListController = [[DeviceListController alloc] init];
     
-    window.rootViewController = _deviceListController;
+    ViewController *viewController = [[ViewController alloc] init];
+    
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deviceListController];
+    
+    
+    window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];
     

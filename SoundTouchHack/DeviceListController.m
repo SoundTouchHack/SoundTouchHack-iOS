@@ -27,6 +27,8 @@
     
     if (self)
     {
+        self.title = @"Devices";
+        
         _devices = [[NSMutableArray alloc] init];
     }
     
