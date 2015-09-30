@@ -56,7 +56,7 @@
     NSLog(@"Found service: %@", [service name]);
 
     
-    [_devices addObject:[[Device alloc] initWithName:_service.name ip:@"IP" port:@"PORT"]];
+    [_devices addObject:[[Device alloc] initWithName:service.name ip:@"IP" port:@"PORT"]];
     
     [self.tableView reloadData];
     
