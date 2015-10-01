@@ -24,5 +24,7 @@
     NSInteger _portNumber;
 }
 
+- (id)initWithService:(NSNetService *)service;
+
 @end
 

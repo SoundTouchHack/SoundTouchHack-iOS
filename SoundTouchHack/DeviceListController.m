@@ -147,7 +147,7 @@
 {
     NSNetService *service = [_services objectAtIndex:indexPath.row];
     
-    ViewController *viewController = [[ViewController alloc] init];
+    ViewController *viewController = [[ViewController alloc] initWithService:service];
     
     [self.navigationController pushViewController:viewController animated:true];
 }

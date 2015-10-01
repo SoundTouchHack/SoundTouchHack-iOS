@@ -21,6 +21,20 @@
 
 @implementation ViewController
 
+- (id)initWithService:(NSNetService *)service
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _service = service;
+        
+        self.title = _service.name;
+    }
+    
+    return self;
+}
+
 - (void)loadView
 {
     CGRect frame = [UIScreen mainScreen].bounds;
@@ -30,6 +44,8 @@
     _mainView.delegate = self;
     
     self.view = _mainView;
+    
+    [self updateInfo];
 }
 
 - (void)viewDidLoad
@@ -39,7 +55,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self discover];
+    //[self discover];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,7 +136,16 @@
 
 - (void)updateInfo
 {
-    [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device found:\n%@\n\nMAC address: %@\nIP address: %s\nPort number: %i", [_service name], _macAddress, _ipAddress, _portNumber]];
+    NSLog(@"-- %@", [_service name]);
+    
+    for (NSData *address in [_service addresses]) {
+        struct sockaddr_in *socketAddress = (struct sockaddr_in *) [address bytes];
+        
+        _ipAddress = inet_ntoa(socketAddress->sin_addr);
+        _portNumber = _service.port;
+        
+        [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device:\n%@\n\nIP address: %s\nPort number: %i", [_service name], _ipAddress, _portNumber]];
+    }
 }
 
 #pragma mark - NSNetServiceBrowserDelegate
