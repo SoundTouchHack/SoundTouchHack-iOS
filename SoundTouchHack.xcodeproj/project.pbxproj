@@ -18,6 +18,11 @@
 		4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */; };
 		4967F63C1BB6913200DBEA06 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F63B1BB6913200DBEA06 /* MainView.m */; settings = {ASSET_TAGS = (); }; };
 		4967F63E1BB6936000DBEA06 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		4996DB401BBD48F2004E769B /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996DB3F1BBD48F2004E769B /* SRWebSocket.m */; settings = {ASSET_TAGS = (); }; };
+		4996DB431BBD49CC004E769B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996DB421BBD49CC004E769B /* CFNetwork.framework */; };
+		4996DB471BBD4A57004E769B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996DB461BBD4A57004E769B /* Foundation.framework */; };
+		4996DB491BBD4C19004E769B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996DB481BBD4C19004E769B /* libicucore.tbd */; };
+		49AD7B7F1BBD482E00092EDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AD7B7E1BBD482E00092EDE /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,14 @@
 		4967F63A1BB6913200DBEA06 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		4967F63B1BB6913200DBEA06 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4996DB3E1BBD48F2004E769B /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		4996DB3F1BBD48F2004E769B /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		4996DB411BBD4907004E769B /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		4996DB421BBD49CC004E769B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4996DB441BBD4A16004E769B /* libSocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocketRocket.a; sourceTree = "<group>"; };
+		4996DB461BBD4A57004E769B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4996DB481BBD4C19004E769B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		49AD7B7E1BBD482E00092EDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4996DB491BBD4C19004E769B /* libicucore.tbd in Frameworks */,
+				4996DB471BBD4A57004E769B /* Foundation.framework in Frameworks */,
+				4996DB431BBD49CC004E769B /* CFNetwork.framework in Frameworks */,
+				49AD7B7F1BBD482E00092EDE /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +73,10 @@
 		4967F6171BB6911600DBEA06 = {
 			isa = PBXGroup;
 			children = (
+				4996DB481BBD4C19004E769B /* libicucore.tbd */,
+				4996DB461BBD4A57004E769B /* Foundation.framework */,
+				4996DB421BBD49CC004E769B /* CFNetwork.framework */,
+				49AD7B7E1BBD482E00092EDE /* Security.framework */,
 				4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */,
 				4967F6221BB6911700DBEA06 /* SoundTouchHack */,
 				4967F6211BB6911700DBEA06 /* Products */,
@@ -73,6 +94,7 @@
 		4967F6221BB6911700DBEA06 /* SoundTouchHack */ = {
 			isa = PBXGroup;
 			children = (
+				4996DB3D1BBD48D8004E769B /* SocketRocket */,
 				4967F6261BB6911700DBEA06 /* AppDelegate.h */,
 				4967F6271BB6911700DBEA06 /* AppDelegate.m */,
 				49077C121BBAA8AB0057CFE7 /* Device.h */,
@@ -100,6 +122,17 @@
 				4967F6241BB6911700DBEA06 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4996DB3D1BBD48D8004E769B /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				4996DB441BBD4A16004E769B /* libSocketRocket.a */,
+				4996DB411BBD4907004E769B /* SocketRocket-Prefix.pch */,
+				4996DB3E1BBD48F2004E769B /* SRWebSocket.h */,
+				4996DB3F1BBD48F2004E769B /* SRWebSocket.m */,
+			);
+			name = SocketRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +210,7 @@
 				4967F63C1BB6913200DBEA06 /* MainView.m in Sources */,
 				491B718B1BB6D17800227A09 /* XmlParser.m in Sources */,
 				4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */,
+				4996DB401BBD48F2004E769B /* SRWebSocket.m in Sources */,
 				4967F6251BB6911700DBEA06 /* main.m in Sources */,
 				49077C141BBAA8AB0057CFE7 /* Device.m in Sources */,
 				49077C111BBAA7A20057CFE7 /* DeviceListController.m in Sources */,
@@ -292,6 +326,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SoundTouchHack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoundTouchHack",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.icedesign.SoundTouchHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -304,6 +342,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SoundTouchHack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SoundTouchHack",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.icedesign.SoundTouchHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

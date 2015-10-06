@@ -9,7 +9,6 @@
 #include <arpa/inet.h>
 
 #import "ViewController.h"
-
 #import "XmlParser.h"
 
 @interface ViewController ()
@@ -21,6 +20,8 @@
 
 @implementation ViewController
 
+
+
 - (id)initWithService:(NSNetService *)service
 {
     self = [super init];
@@ -30,6 +31,8 @@
         _service = service;
         
         self.title = _service.name;
+        
+        //[self reconnect];
     }
     
     return self;
@@ -46,6 +49,8 @@
     self.view = _mainView;
     
     [self updateInfo];
+    
+    [self reconnect];
 }
 
 - (void)viewDidLoad
@@ -77,6 +82,8 @@
 - (void)getVolume
 {
     NSString *urlString = [NSString stringWithFormat:@"http://%s:%i/volume", _ipAddress, _portNumber];
+    
+    NSLog(@"%@", urlString);
     
     NSURL *url = [NSURL URLWithString:urlString];
     
@@ -146,6 +153,35 @@
         
         [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device:\n%@\n\nIP address: %s\nPort number: %i", [_service name], _ipAddress, _portNumber]];
     }
+}
+
+- (void)reconnect;
+{
+    _webSocket.delegate = nil;
+    _webSocket = nil;
+    
+    NSString *urlString = [NSString stringWithFormat:@"ws://%s:8080/", _ipAddress];
+    
+    NSLog(@"Web socket url: %@", urlString);
+    
+    SRWebSocket *newWebSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:urlString]];
+    newWebSocket.delegate = self;
+    
+    [newWebSocket open];
+    
+    /*
+    _webSocket.delegate = nil;
+    
+    //[_webSocket close];
+    
+    NSString *url = [NSString stringWithFormat:@"ws://%s:8080", _ipAddress];
+    
+    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    _webSocket.delegate = self;
+    
+    NSLog(@"Opening web socket connection...");
+    
+    [_webSocket open];*/
 }
 
 #pragma mark - NSNetServiceBrowserDelegate
@@ -220,6 +256,40 @@
 - (void)volume:(int)volume
 {
     [self setVolume:volume];
+}
+
+#pragma mark - SRWebSocketDelegate
+
+- (void)webSocketDidOpen:(SRWebSocket *)newWebSocket
+{
+    _webSocket = newWebSocket;
+    
+    [_webSocket send:[NSString stringWithFormat:@"webSocketDidOpen: %@", [UIDevice currentDevice].name]];
+    
+    NSLog(@"Web socket did open");
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
+{
+    NSLog(@"Web socket didFailWithError: %@", error.description);
+    
+    //[self reconnect];
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+    NSLog(@"Web socket did close");
+    
+    //NSLog(@"Web socket didCloseWithCode: %d - %@ - %@", code, reason, wasClean);
+    
+    [self reconnect];
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
+{
+    NSLog(@"Web socket didReceiveMessage: %@", message);
+    
+    //self.messagesTextView.text = [NSString stringWithFormat:@"%@\n%@", self.messagesTextView.text, message];
 }
 
 @end
