@@ -168,7 +168,11 @@
     _webSocket.delegate = nil;
     [_webSocket close];
     
-    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://localhost:9000/chat"]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    
+    [request setValue:@"gabbo" forHTTPHeaderField:@"Sec-WebSocket-Protocol"];
+    
+    _webSocket = [[SRWebSocket alloc] initWithURLRequest: request];
     _webSocket.delegate = self;
     
     self.title = @"Opening Connection...";
