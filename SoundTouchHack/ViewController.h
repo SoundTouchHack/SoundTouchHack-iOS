@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "MainView.h"
-#import "SRWebSocket.h"
 
-@interface ViewController : UIViewController<NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSStreamDelegate, MainViewDelegate, SRWebSocketDelegate>
+@interface ViewController : UIViewController<NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSStreamDelegate, MainViewDelegate>
 {
     NSNetServiceBrowser *_browser;
     
@@ -24,11 +23,8 @@
     char *_ipAddress;
     NSInteger _portNumber;
     
-    SRWebSocket *_webSocket;
     NSMutableArray *_messages;
 }
-
-@property (nonatomic, strong) SRWebSocket *webSocket;
 
 - (id)initWithService:(NSNetService *)service;
 

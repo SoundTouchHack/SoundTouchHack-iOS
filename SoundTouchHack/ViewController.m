@@ -8,10 +8,11 @@
 
 #include <arpa/inet.h>
 
+#import "SRWebSocket.h"
 #import "ViewController.h"
 #import "XmlParser.h"
 
-@interface ViewController ()
+@interface ViewController () <SRWebSocketDelegate>
 {
     MainView *_mainView;
 }
@@ -19,6 +20,9 @@
 @end
 
 @implementation ViewController
+{
+    SRWebSocket *_webSocket;
+}
 
 
 
@@ -50,7 +54,7 @@
     
     [self updateInfo];
     
-    [self reconnect];
+    
 }
 
 - (void)viewDidLoad
@@ -60,7 +64,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //[self discover];
+    [self reconnect];
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,31 +161,18 @@
 
 - (void)reconnect;
 {
+    NSString *urlString = [NSString stringWithFormat:@"ws://%s:8080", _ipAddress];
+    
+    NSLog(urlString);
+    
     _webSocket.delegate = nil;
-    _webSocket = nil;
+    [_webSocket close];
     
-    NSString *urlString = [NSString stringWithFormat:@"ws://%s:8080/", _ipAddress];
-    
-    NSLog(@"Web socket url: %@", urlString);
-    
-    SRWebSocket *newWebSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:urlString]];
-    newWebSocket.delegate = self;
-    
-    [newWebSocket open];
-    
-    /*
-    _webSocket.delegate = nil;
-    
-    //[_webSocket close];
-    
-    NSString *url = [NSString stringWithFormat:@"ws://%s:8080", _ipAddress];
-    
-    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://localhost:9000/chat"]]];
     _webSocket.delegate = self;
     
-    NSLog(@"Opening web socket connection...");
-    
-    [_webSocket open];*/
+    self.title = @"Opening Connection...";
+    [_webSocket open];
 }
 
 #pragma mark - NSNetServiceBrowserDelegate
@@ -273,7 +264,7 @@
 {
     NSLog(@"Web socket didFailWithError: %@", error.description);
     
-    //[self reconnect];
+    [self reconnect];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
