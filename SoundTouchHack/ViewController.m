@@ -67,6 +67,15 @@
     [self reconnect];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    _webSocket.delegate = nil;
+    [_webSocket close];
+    _webSocket = nil;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -283,6 +292,14 @@
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
     NSLog(@"Web socket didReceiveMessage: %@", message);
+    
+    XmlParser *parser = [[XmlParser alloc] init];
+    
+    int volume = [parser parseXml:[message dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [_mainView setVolume:volume];
+    
+    NSLog(@"volume fetched: %d", volume);
     
     //self.messagesTextView.text = [NSString stringWithFormat:@"%@\n%@", self.messagesTextView.text, message];
 }
