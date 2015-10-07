@@ -25,8 +25,6 @@
     
     DeviceListController *deviceListController = [[DeviceListController alloc] init];
     
-    ViewController *viewController = [[ViewController alloc] init];
-    
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deviceListController];
     

@@ -53,7 +53,7 @@
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didFindService:(NSNetService *)service moreComing:(BOOL)moreComing
 {
-    NSLog(@"Found service: %@", [service name]);
+    NSLog(@"Found device: %@", [service name]);
     
     
     NSNetService *service2 = [[NSNetService alloc] initWithDomain:@"local." type:@"_soundtouch._tcp" name:[service name]];
@@ -68,17 +68,17 @@
 
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
 {
-    NSLog(@"Did stop searching");
+    //NSLog(@"Did stop searching");
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didNotSearch:(NSDictionary *)errorDict
 {
-    NSLog(@"Did not search");
+    //NSLog(@"Did not search");
 }
 
 - (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser
 {
-    NSLog(@"Start searching");
+    //NSLog(@"Start searching");
 }
 
 #pragma mark - NSNetServiceDelegate
@@ -89,7 +89,7 @@
     
     _macAddress = newStr;
     
-    NSLog(@"MAC address: %@", _macAddress);
+    //NSLog(@"MAC address: %@", _macAddress);
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)sender
@@ -100,8 +100,8 @@
         _ipAddress = inet_ntoa(socketAddress->sin_addr);
         _portNumber = [sender port];
         
-        NSLog(@"IP address: %s", _ipAddress);
-        NSLog(@"Port number: %i", _portNumber);
+        //NSLog(@"IP address: %s", _ipAddress);
+        //NSLog(@"Port number: %i", _portNumber);
         
         [self.tableView reloadData];
     }

@@ -1,16 +1,8 @@
-//
-//  ViewController.h
-//  SoundTouchHack
-//
-//  Created by Jürgen De Beckker on 26/09/15.
-//  Copyright © 2015 Ice Design. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 #import "MainView.h"
 
-@interface ViewController : UIViewController<NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSStreamDelegate, MainViewDelegate>
+@interface ViewController : UIViewController<MainViewDelegate>
 {
     NSNetServiceBrowser *_browser;
     
@@ -22,8 +14,6 @@
     NSString *_macAddress;
     char *_ipAddress;
     NSInteger _portNumber;
-    
-    NSMutableArray *_messages;
 }
 
 - (id)initWithService:(NSNetService *)service;

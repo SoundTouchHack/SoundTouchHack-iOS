@@ -77,7 +77,7 @@
 
 - (void)setVolume:(int)volume
 {
-    NSLog(@"Set slider value: %d", volume);
+    //NSLog(@"Set slider value: %d", volume);
     
     [_slider setValue:volume animated:NO];
 }
