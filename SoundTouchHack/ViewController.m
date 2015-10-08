@@ -23,7 +23,9 @@
     {
         _service = service;
         
+        
         self.title = _service.name;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
         
         
         for (NSData *address in [_service addresses]) {
@@ -214,7 +216,8 @@
     
     NSLog(@"Volume fetched from socket: %d", volume);
     
-    [_mainView setVolume:volume];
+    if (volume>0)
+        [_mainView setVolume:volume];
     
     //self.messagesTextView.text = [NSString stringWithFormat:@"%@\n%@", self.messagesTextView.text, message];
 }

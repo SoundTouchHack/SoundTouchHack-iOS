@@ -1,6 +1,6 @@
 #import "MainView.h"
 
-#define MARGIN 50
+#define MARGIN 40
 
 @implementation MainView
 
@@ -16,7 +16,7 @@
         _infoLabel = [[UILabel alloc] init];
         
         _infoLabel.numberOfLines = 20;
-        _infoLabel.font = [UIFont systemFontOfSize:12];
+        _infoLabel.font = [UIFont systemFontOfSize:14];
         _infoLabel.text = @"App loaded";
         
         [self addSubview:_infoLabel];
@@ -77,7 +77,7 @@
 
 - (void)setVolume:(int)volume
 {
-    //NSLog(@"Set slider value: %d", volume);
+    NSLog(@"Set slider value: %d", volume);
     
     [_slider setValue:volume animated:NO];
 }

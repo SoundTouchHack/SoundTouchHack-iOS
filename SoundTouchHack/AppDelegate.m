@@ -28,6 +28,10 @@
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:deviceListController];
     
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    if (systemVersion >= 7.0)
+        navigationController.navigationBar.translucent = NO;
     
     window.rootViewController = navigationController;
     
