@@ -14,7 +14,6 @@
 		4967F6281BB6911700DBEA06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F6271BB6911700DBEA06 /* AppDelegate.m */; };
 		4967F62B1BB6911700DBEA06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F62A1BB6911700DBEA06 /* ViewController.m */; };
 		4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62C1BB6911700DBEA06 /* Main.storyboard */; };
-		4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4967F62F1BB6911700DBEA06 /* Assets.xcassets */; };
 		4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4967F6311BB6911700DBEA06 /* LaunchScreen.storyboard */; };
 		4967F63C1BB6913200DBEA06 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967F63B1BB6913200DBEA06 /* MainView.m */; settings = {ASSET_TAGS = (); }; };
 		4967F63E1BB6936000DBEA06 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -23,6 +22,7 @@
 		4996DB471BBD4A57004E769B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996DB461BBD4A57004E769B /* Foundation.framework */; };
 		4996DB491BBD4C19004E769B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4996DB481BBD4C19004E769B /* libicucore.tbd */; };
 		49AD7B7F1BBD482E00092EDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AD7B7E1BBD482E00092EDE /* Security.framework */; };
+		49D20C3B1BC6866500121B35 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D20C3A1BC6866500121B35 /* Icon.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,6 @@
 		4967F6291BB6911700DBEA06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4967F62A1BB6911700DBEA06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4967F62D1BB6911700DBEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4967F62F1BB6911700DBEA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4967F6321BB6911700DBEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4967F6341BB6911700DBEA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4967F63A1BB6913200DBEA06 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		4996DB461BBD4A57004E769B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4996DB481BBD4C19004E769B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		49AD7B7E1BBD482E00092EDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		49D20C3A1BC6866500121B35 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,6 @@
 				491B71891BB6D17800227A09 /* XmlParser.h */,
 				491B718A1BB6D17800227A09 /* XmlParser.m */,
 				4967F6341BB6911700DBEA06 /* Info.plist */,
-				4967F62F1BB6911700DBEA06 /* Assets.xcassets */,
 				4967F6231BB6911700DBEA06 /* Supporting Files */,
 			);
 			path = SoundTouchHack;
@@ -139,6 +138,7 @@
 		49D20C361BC530D100121B35 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				49D20C3A1BC6866500121B35 /* Icon.xcassets */,
 				4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */,
 			);
 			name = Images;
@@ -210,8 +210,8 @@
 			files = (
 				4967F6331BB6911700DBEA06 /* LaunchScreen.storyboard in Resources */,
 				4967F63E1BB6936000DBEA06 /* Default-568h@2x.png in Resources */,
-				4967F6301BB6911700DBEA06 /* Assets.xcassets in Resources */,
 				4967F62E1BB6911700DBEA06 /* Main.storyboard in Resources */,
+				49D20C3B1BC6866500121B35 /* Icon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
