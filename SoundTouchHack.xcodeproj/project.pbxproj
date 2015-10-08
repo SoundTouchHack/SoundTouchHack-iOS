@@ -90,7 +90,6 @@
 		4967F6221BB6911700DBEA06 /* SoundTouchHack */ = {
 			isa = PBXGroup;
 			children = (
-				49D20C371BC530F100121B35 /* Controllers */,
 				4996DB3D1BBD48D8004E769B /* SocketRocket */,
 				4967F6261BB6911700DBEA06 /* AppDelegate.h */,
 				4967F6271BB6911700DBEA06 /* AppDelegate.m */,
@@ -142,13 +141,6 @@
 				4967F63D1BB6936000DBEA06 /* Default-568h@2x.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		49D20C371BC530F100121B35 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
