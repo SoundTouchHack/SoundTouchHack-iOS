@@ -14,6 +14,18 @@
     return _volume;
 }
 
+- (NSString *)parseNowPlayingXml:(NSData *)webData
+{
+    xmlParser = [[NSXMLParser alloc] initWithData:webData];
+    
+    [xmlParser setDelegate: self];
+    [xmlParser setShouldResolveExternalEntities: YES];
+    
+    [xmlParser parse];
+    
+    return _nowPlaying;
+}
+
 - (void)parser:(NSXMLParser *)parser 
 didStartElement:(NSString *)elementName 
    namespaceURI:(NSString *)namespaceURI 
@@ -27,9 +39,9 @@ didStartElement:(NSString *)elementName
    namespaceURI:(NSString *)namespaceURI 
   qualifiedName:(NSString *)qName 
 {
-    if( [elementName isEqualToString:@"actualvolume"])
+    if( [elementName isEqualToString:@"itemName"])
 	{
-        _volume = [_string intValue];
+        _nowPlaying = _string;
         
         return;
 	}

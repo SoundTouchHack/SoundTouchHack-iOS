@@ -35,6 +35,8 @@
             _portNumber = _service.port;
             
             [self getVolume];
+            
+            [self getNowPlaying];
         }
     }
     
@@ -98,6 +100,23 @@
     }] resume];
 }
 
+- (void)getNowPlaying
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://%s:%i/now_playing", _ipAddress, (int)_portNumber];
+    
+    NSLog(@"Now playing URL: %@", urlString);
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+      {
+          if ([data length] > 0 && error == nil)
+              [self fetchedNowPlaying:data];
+      }] resume];
+}
+
 - (void)fetchedVolume:(NSData *)data
 {
     XmlParser *parser = [[XmlParser alloc] init];
@@ -107,6 +126,17 @@
     NSLog(@"Volume fetched from API: %d", volume);
     
     [_mainView setVolume:volume];
+}
+
+- (void)fetchedNowPlaying:(NSData *)data
+{
+    XmlParser *parser = [[XmlParser alloc] init];
+    
+    _nowPlaying = [parser parseNowPlayingXml:data];
+    
+    NSLog(@"Now playing: %@", _nowPlaying);
+    
+    [self updateInfo];
 }
 
 - (void)setVolume:(int)volume
@@ -145,7 +175,7 @@
         _ipAddress = inet_ntoa(socketAddress->sin_addr);
         _portNumber = _service.port;
         
-        [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device:\n%@\n\nIP address: %s\nPort number: %i", [_service name], _ipAddress, (int)_portNumber]];
+        [_mainView setLabel:[NSString stringWithFormat:@"SoundTouch device:\n%@\n\nIP address: %s\nPort number: %i\n\nNow playing: %@", [_service name], _ipAddress, (int)_portNumber, _nowPlaying]];
     }
 }
 
@@ -208,7 +238,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-    //NSLog(@"Web socket didReceiveMessage: %@", message);
+    NSLog(@"Web socket didReceiveMessage: %@", message);
     
     XmlParser *parser = [[XmlParser alloc] init];
     

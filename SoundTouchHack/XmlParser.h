@@ -7,8 +7,10 @@
     NSString *_string;
     
     int _volume;
+    NSString *_nowPlaying;
 }
 
-- (int)parseXml:(NSData *)xml;
+- (int)parseXml:(NSData *)webData;
+- (NSString *)parseNowPlayingXml:(NSData *)webData;
 
 @end

@@ -14,6 +14,8 @@
     NSString *_macAddress;
     char *_ipAddress;
     NSInteger _portNumber;
+    
+    NSString *_nowPlaying;
 }
 
 - (id)initWithService:(NSNetService *)service;
